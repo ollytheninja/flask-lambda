@@ -55,7 +55,7 @@ def make_environ(event):
         environ.get('HTTP_HOST', ''),
         environ.get('HTTP_X_FORWARDED_PORT', ''),
     )
-    environ['SCRIPT_NAME'] = ''
+    environ['SCRIPT_NAME'] = environ.get('SCRIPT_NAME', '')
     environ['SERVER_NAME'] = 'SERVER_NAME'
 
     environ['SERVER_PORT'] = environ.get('HTTP_X_FORWARDED_PORT', '')
